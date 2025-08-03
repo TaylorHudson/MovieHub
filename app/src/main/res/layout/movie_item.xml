@@ -35,6 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="03 ago 2025"
         android:textColor="#555"
         android:textSize="14sp"
