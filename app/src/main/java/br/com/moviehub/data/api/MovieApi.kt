@@ -8,14 +8,14 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MovieApi {
-    @GET("/movie/{category}")
+    @GET("movie/{category}")
     suspend fun getMovies(
         @Path("category") category: String,
         @Query("include_adult") includeAdult: Boolean = false,
         @Query("include_video") includeVideo: Boolean = false,
         @Query("language") language: String = "pt-BR",
         @Query("page") page: Int = 1,
+        @Query("api_key") apiKey: String = Constants.API_KEY,
         @Header("accept") accept: String = "application/json",
-        @Header("api_key") apiKey: String = Constants.API_KEY
     ): MovieResponse
 }

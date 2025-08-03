@@ -2,4 +2,8 @@
     <string name="app_name">MovieHub</string>
     <string name="buscar_por_um_filme">Buscar por um filme...</string>
     <string name="catalogo_de_filmes">Catálogo de filmes</string>
+    <string name="em_cartaz">Em Cartaz</string>
+    <string name="populares">Populares</string>
+    <string name="pr_ximas_estreias">Próximas Estreias</string>
+    <string name="bem_avaliados">Bem Avaliados</string>
 </resources>

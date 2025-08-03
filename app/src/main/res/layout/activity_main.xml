@@ -11,8 +11,8 @@
         android:id="@+id/movieSearch"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="70dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="10dp"
         android:autofillHints="search"
         android:background="@drawable/search_edit_text_bg"
@@ -26,15 +26,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMovies"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/movieSearch"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/movieSearch"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/movie_item" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/CustomBottomNav"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
