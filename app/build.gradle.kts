@@ -17,6 +17,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -36,12 +41,20 @@ android {
 }
 
 dependencies {
-    // Retrofit e conversor JSON
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
+
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.recyclerview)
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.kotlinx.coroutines.core.v180)
+    implementation(libs.kotlinx.coroutines.android.v180)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
