@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation("io.coil-kt:coil:2.7.0")
+
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
