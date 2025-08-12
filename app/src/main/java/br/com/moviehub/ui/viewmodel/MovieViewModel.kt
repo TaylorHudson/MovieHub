@@ -9,18 +9,19 @@ import br.com.moviehub.data.api.MovieApiInstance
 import br.com.moviehub.data.model.Movie
 import br.com.moviehub.data.model.MovieCategory
 import br.com.moviehub.data.repository.MovieRepository
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
 
+@OptIn(FlowPreview::class)
 class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> = _movies
 
     private val _searchQuery = MutableStateFlow("")
-    val searchQuery get() = _searchQuery
 
     init {
         // Observa o Flow de busca com debounce
@@ -44,6 +45,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
             _movies.postValue(response.results)
         }
     }
+
     fun searchMovies(query: String) {
         viewModelScope.launch {
             if (query.isNotEmpty()) {
@@ -55,6 +57,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
             }
         }
     }
+
     fun onSearchQueryChanged(query: String) {
         _searchQuery.value = query
     }
